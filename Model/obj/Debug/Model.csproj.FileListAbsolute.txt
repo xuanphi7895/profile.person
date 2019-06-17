@@ -1,0 +1,14 @@
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\bin\Debug\Model.dll.config
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\bin\Debug\Model.dll
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\bin\Debug\Model.pdb
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\bin\Debug\EntityFramework.dll
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\bin\Debug\PagedList.dll
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\bin\Debug\PagedList.Mvc.dll
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\bin\Debug\EntityFramework.xml
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\bin\Debug\PagedList.xml
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\bin\Debug\PagedList.Mvc.xml
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\obj\Debug\Model.dll
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\obj\Debug\Model.pdb
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

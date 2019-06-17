@@ -1,0 +1,183 @@
+﻿@model IEnumerable<Model.EF.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header {
+    Information Product
+}
+@section jsFooter {
+    <script type="text/javascript" src="~/Areas/Assets/main/js/productcontroller.js"></script>
+}
+<style>
+    div.dataTables_length {
+    /*padding-left: 1em;*/
+    /*padding-left: 2em;*/
+    }
+    div.dataTables_info{
+        padding-top: 0em !important;
+    }
+    div.dataTables_length,
+    div.dataTables_filter {
+        /*padding-top: 0.55em;*/
+        /*padding-top: 1em;*/
+    }
+</style>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">List Table Products </h3>
+                </div>
+                <div>
+            <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-info" id="btnAddNew"> Add New</button>
+        </div>
+                <!-- Modal -->
+                <div class="modal fade" id="modalAddUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add Personnels</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            @*modal body*@
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Name</label>
+                                            <input type="email" class="form-control" id="txtName" placeholder="Name">
+                                            <input type="hidden" id="hidID" value="0" />
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">MetaTitle</label>
+                                            <input type="text" class="form-control" id="txtMetaTitle" placeholder="MetaTitle">                                
+                                        </div>
+                                    </div>
+                                    @*<div class="form-group">
+                                <label for="inputAddress">ModifiedDate</label>
+                                <input type='text' class="form-control" id="dtModifiedDate" placeholder="ModifiedDate" />
+                                <script type="text/javascript">
+                                    $(function () {
+                                        $('#dtModifiedDate').datetimepicker();
+                                    });
+                                </script>
+                            </div>*@
+                                    <div class="form-group">
+                                        <label for="inputAddress2">ModifiedBy</label>
+                                        <input type="text" class="form-control" id="txtModifiedBy" placeholder="ModifiedBy">
+                                    </div>
+                                    <div class="form-row">
+                                @*<div class="form-group col-md-6">
+                                    <label for="inputCity">Combobox PsnSexID</label>
+                                    <input type="text" class="form-control" id="cmbPsnSexID" placeholder="PsnSexID">
+                                </div>*@
+                                @*<div class="form-group col-md-4">
+                                    <label for="inputState">State</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>*@
+                                @*<div class="form-group col-md-2">
+                                    <label for="inputZip">Zip</label>
+                                    <input type="text" class="form-control" id="inputZip">
+                                </div>*@
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="chkStatus">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Status
+                                    </label>
+                                </div>
+                            </div>
+                            @*<button type="submit" class="btn btn-primary">Create</button>*@
+                                </form>
+                            </div>
+                            @*End modal body*@
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" id="btnsaveValue">Save</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Modal-->
+                <!-- /.box-header -->
+                <div class="box-body">
+                    @*<table id="example1" class="table table-striped table-bordered" table table-bordered table-striped>*@
+                    <table id="example1" class="table table-striped table-bordered hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Name</th>
+                                <th>MetaTitle</th>
+                                <th>MetaKeywords</th>
+                                <th>Price</th>
+                                <th>Image</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                                <th>PromotionPrice</th>
+                                <th>CreatedDate</th>
+                                <th>CreatedBy</th>
+                                <th>ModifiedDate</th>
+                                <th>TopHot</th>
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products">  </tbody>
+                    </table>
+                    <script id="data-template" type="x-tmpl-mustache">
+                        <tr id="row_{{ID}}">
+                            @*Các trường có hiển thị ở Index này thì trong file productscontroller.js phải lấy các trường tương ứng*@
+                            <td>{{{Counter}}}</td>
+                            <td id="Name_{{ID}}">{{Name}}</td>
+                            <td id="MetaTitle_{{ID}}">{{MetaTitle}}</td>
+                            <td id="MetaKeywords_{{ID}}">{{MetaKeywords}}</td>
+                            <td ><input class="form-control form-control-sm mb-2 mr-sm-2 mb-sm-0 txtPrice" aria-label="Small" type="number" data-id="{{ID}}" value="{{Price}}" /><span class="input-group-text"> $</span></td> @*Input Enter or Edit from Client*@
+                            <td id="Image_{{ID}}">{{Image}}</td>
+                            <td id="Quantity_{{ID}}">{{Quantity}}</td>
+                            <td id="Status_{{ID}}">{{{Status}}}</td> @*Status with {{{}}}. Can render for class bootstrap*@
+                            <td id="PromotionPrice_{{ID}}">{{PromotionPrice}}</td>
+                            <td id="CreatedDate_{{ID}}">{{CreatedDate}}</td>
+                            <td id="CreatedBy_{{ID}}">{{CreatedBy}}</td>
+                            <td id="ModifiedDate_{{ID}}">{{ModifiedDate}}</td>
+                            <td id="TopHot_{{ID}}">{{TopHot}}</td>
+                            <td>
+                                <button class="btn btn-primary btn-edit" data-id="{{ID}}">Edit</button>
+                                <button class="btn btn-danger btn-delete" data-id="{{ID}}">Delete</button>
+                            </td>
+                        </tr>
+                    </script>
+                    <script>
+        $(document).ready(function () {
+            $('#example1').DataTable({
+                "scrollY": '90vh', //Chiều cao: Height
+                "scrollX": true,
+                "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+                //"dom": '<"bottom"iflp<"clear">>',
+                "language": {
+                    "decimal": ",",
+                    "thousands": "."
+                },
+                "scrollCollapse": true, //scroll: cuộn trang
+                stateSave: true //State store local on chorme when load the firstly
+            });
+        });
+                    </script>
+                    @*"dom": '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',*@
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+

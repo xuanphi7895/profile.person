@@ -1,0 +1,5 @@
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Common\bin\Debug\Common.dll
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Common\bin\Debug\Common.pdb
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Common\obj\Debug\Common.dll
+F:\TaiLieuCaNhan\ASP.NET\PROJECTS\2019\Personal\Profile\Common\obj\Debug\Common.pdb

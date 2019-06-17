@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/Content/js/plugins/bootstrap/bootstrap.min.css">
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">*@
+    <!-- slick slider -->
+    @*<link rel="stylesheet" href="~/Content/js/plugins/slick/slick.css">*@
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.4.1/slick.css" rel="stylesheet" />
+    @*<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" rel="stylesheet" />*@
+    <!-- themefy-icon -->
+    @*<link rel="stylesheet" href="~/Content/js/plugins/themify-icons/themify-icons.css">*@
+    <link href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" rel="stylesheet" />
+    <!-- Main Stylesheet -->
+    <link href="~/Content/css/styles.css" rel="stylesheet">
+
+</head>
+<body>
+    <header class="navigation fixed-top nav-bg">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand font-tertiary h3" href="#"><img src="../Content/images/Logo_XP_Template.svg" alt="Phi"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navigation">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="file:///F:/TaiLieuCaNhan/ASP.NET/PROJECTS/Theme/paper-kit-2-html-v2.2.0/paper-kit-2-html-v2.2.0/index.html" target="_blank">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Dashboard", "Home")" target="_blank">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Login")">Log In</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- hero area -->
+    @RenderBody()
+
+    <!-- jQuery -->
+    <script src="~/Content/js/plugins/jQuery/jquery.min.js"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*@
+
+    <!-- Bootstrap JS -->
+    <script src="~/Content/js/plugins/bootstrap/bootstrap.min.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>*@
+
+    <!-- slick slider -->
+    @*<script src="~/Content/js/plugins/slick/slick.min.js"></script>*@
+    <script src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>*@
+
+    <!-- filter -->
+    <script src="~/Content/js/plugins/shuffle/shuffle.min.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/5.2.1/shuffle.min.js"></script>*@
+
+    <!-- Main Script -->
+    <script src="~/Content/js/script.js"></script>
+
+</body>
+</html>
